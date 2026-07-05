@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-    <title>JB Jar Store - Payment</title>
+    <title>JB Jar Store - Jual Beli Akun Game Terpercaya</title>
     <meta name="description" content="JB Jar Store - Tempat jual beli akun game terpercaya. Free Fire, Mobile Legends, Roblox. Garansi full & amanah." />
     <meta name="keywords" content="JB Jar Store, jual beli akun, free fire, mobile legends, roblox, akun game murah" />
     <meta name="author" content="JB Jar Store" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <meta property="og:title" content="JB Jar Store - Jual Beli Akun Game Terpercaya" />
+    <meta property="og:description" content="Tempat jual beli akun game terpercaya. Free Fire, Mobile Legends, Roblox. Garansi full & amanah." />
+    <meta property="og:image" content="assets/logo profile.jpg" />
+    <meta property="og:type" content="website" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
     <div class="glow-overlay"></div>
+    <div class="particles-container" id="particlesContainer"></div>
 
     <div class="container">
 
@@ -37,8 +42,12 @@
         </div>
 
         <!-- ===== TITLE ===== -->
-        <h1 class="title-main">JB JAR STORE</h1>
+        <h1 class="title-main">IT'S ME <br>JAR STORE</h1>
         <p class="title-sub">✦ Jual Beli Akun Game Terpercaya ✦</p>
+
+        <div class="status-online">
+            <span class="dot"></span> Online — Siap Melayani 24 Jam
+        </div>
 
         <!-- ===== DIVIDER ===== -->
         <div class="divider-custom">
@@ -59,31 +68,53 @@
             </div>
         </div>
 
+        <!-- ===== STATS ===== -->
+        <div class="stats-grid">
+            <div class="stat-item">
+                <i class="fas fa-users"></i>
+                <span class="number">500+</span>
+                <span class="label">Pelanggan Puas</span>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-gamepad"></i>
+                <span class="number">3+</span>
+                <span class="label">Game Tersedia</span>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-star"></i>
+                <span class="number">4.9/5</span>
+                <span class="label">Rating Pelanggan</span>
+            </div>
+        </div>
+
         <!-- ===== DESKRIPSI ===== -->
         <div class="desc-text">
             <p>
                 <span class="neon">JB Jar Store</span> adalah tempat <span class="highlight">jual beli akun game</span>
-                yang terpercaya, amanah, dan sudah dipercaya oleh <span class="highlight">ratusan pelanggan</span>
-                dari seluruh Indonesia. Kami hadir untuk memenuhi kebutuhan akun game Anda dengan
-                <span class="highlight">kualitas terbaik</span> dan <span class="highlight">harga yang bersahabat</span>.
+                yang <span class="highlight">terpercaya, amanah</span>, dan sudah dipercaya oleh
+                <span class="highlight">500+ pelanggan</span> dari seluruh Indonesia.
             </p>
             <p>
-                Melayani berbagai macam game populer seperti <span class="highlight">Free Fire</span>,
-                <span class="highlight">Mobile Legends</span>, dan <span class="highlight">Roblox</span>
-                dengan sistem <span class="neon">garansi full</span> yang membuat Anda tidak perlu khawatir
-                akan keamanan akun yang dibeli. Kami berkomitmen untuk memberikan
-                <span class="highlight">pelayanan terbaik</span> untuk setiap pelanggan.
-            </p>
-            <p>
-                Kami memahami bahwa setiap gamer memiliki kebutuhan yang berbeda-beda.
-                Oleh karena itu, JB Jar Store hadir dengan <span class="highlight">berbagai pilihan akun</span>
-                yang bisa disesuaikan dengan <span class="highlight">budget dan keinginan</span> Anda.
-                Baik untuk keperluan <span class="highlight">santai, push rank, koleksi skin langka</span>,
-                atau bahkan untuk <span class="highlight">investasi</span> — semuanya tersedia di sini.
+                Kami hadir untuk memenuhi kebutuhan akun game Anda dengan <span class="highlight">kualitas terbaik</span>,
+                <span class="highlight">harga bersahabat</span>, dan <span class="highlight">garansi full</span>
+                yang membuat Anda tidak perlu khawatir.
             </p>
             <span class="tagline">
-                <i class="fas fa-heart"></i> Kami hadir untuk <strong>#ALLAMAN</strong> &amp; <strong>#AMANAH</strong> <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i> #ALLAMAN &amp; #AMANAH <i class="fas fa-heart"></i>
             </span>
+        </div>
+
+        <!-- ===== CONTACT INFO ===== -->
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fa-brands fa-whatsapp" style="color:#25D366;"></i>
+                <span>+62 831-7597-5689</span>
+                <button class="btn-copy-mini" onclick="copyNumber('083175975689')"><i class="fa-regular fa-copy"></i></button>
+            </div>
+            <div class="contact-item">
+                <i class="fa-brands fa-instagram" style="color:#E4405F;"></i>
+                <span>@Jarstore09</span>
+            </div>
         </div>
 
         <!-- ===== SECTION: TENTANG KAMI ===== -->
@@ -95,36 +126,23 @@
             <p>
                 <i class="fas fa-shield-alt icon"></i>
                 <strong>Aman &amp; Terpercaya</strong> — Setiap transaksi di JB Jar Store
-                kami jamin keamanannya. Kami menggunakan sistem yang transparan dan
-                selalu mengutamakan kepuasan pelanggan. Tidak ada kata "penipuan" di sini.
-                Kami sudah dipercaya oleh <strong>ratusan pelanggan</strong> dan terus berkembang setiap harinya.
+                kami jamin keamanannya. Kami sudah dipercaya oleh <strong>500+ pelanggan</strong>
+                dan terus berkembang setiap harinya.
             </p>
             <p>
                 <i class="fas fa-bolt icon"></i>
-                <strong>Proses Cepat &amp; Mudah</strong> — Tidak perlu ribet!
-                Cukup chat admin, pilih akun yang diinginkan, lakukan pembayaran,
-                dan akun langsung Anda terima. Proses <strong>DIRECT</strong> tanpa basa-basi
-                dan tanpa antrian panjang. Kami menghargai waktu Anda.
+                <strong>Proses Cepat &amp; Mudah</strong> — Cukup chat admin, pilih akun,
+                bayar, dan akun langsung Anda terima. <strong>DIRECT</strong> tanpa antrian!
             </p>
             <p>
                 <i class="fas fa-hand-holding-heart icon"></i>
-                <strong>Amanah &amp; Ramah</strong> — Kami selalu berusaha memberikan
-                pelayanan terbaik dengan senyuman. Setiap pelanggan adalah prioritas,
-                dan kami siap membantu kapan saja Anda butuh. Kepuasan Anda adalah <strong>tujuan utama</strong> kami.
-            </p>
-            <p>
-                <i class="fas fa-users icon"></i>
-                <strong>Komunitas Berkembang</strong> — JB Jar Store tidak hanya tempat
-                jual beli, tapi juga komunitas para gamer yang saling support.
-                Bergabunglah dan rasakan pengalaman bertransaksi yang menyenangkan!
-                Kami memiliki <strong>ratusan member aktif</strong> yang selalu update setiap hari.
+                <strong>Amanah &amp; Ramah</strong> — Pelayanan terbaik dengan senyuman.
+                Setiap pelanggan adalah prioritas. <strong>Kepuasan Anda tujuan utama</strong>.
             </p>
             <p>
                 <i class="fas fa-tag icon"></i>
-                <strong>Harga Bersahabat</strong> — Dengan budget mulai dari
-                <strong>Rp 5.000</strong> hingga <strong>Rp 100.000</strong>,
-                semua kalangan bisa memiliki akun game impian tanpa menguras dompet.
-                Kami percaya bahwa <strong>kualitas tidak harus mahal</strong>.
+                <strong>Harga Bersahabat</strong> — Budget mulai <strong>Rp 5.000</strong>
+                hingga <strong>Rp 100.000</strong>. Semua kalangan bisa memiliki akun impian!
             </p>
         </div>
 
@@ -134,48 +152,15 @@
         </div>
 
         <div class="about-box">
-            <p>
-                <i class="fas fa-check-circle icon icon-green"></i>
-                <strong>Garansi 100% Uang Kembali</strong> — Jika ada kendala dengan akun yang Anda beli,
-                kami siap memberikan garansi penuh. Kepuasan Anda adalah harga mati bagi kami.
-                Tidak ada istilah <strong>"zonk"</strong> di JB Jar Store.
-            </p>
-            <p>
-                <i class="fas fa-check-circle icon icon-green"></i>
-                <strong>Stok Selalu Tersedia</strong> — Kami menjaga stok akun segar setiap hari.
-                Jadi Anda tidak perlu menunggu lama untuk mendapatkan akun yang diinginkan.
-                <strong>Update stok</strong> dilakukan secara berkala setiap pagi dan malam.
-            </p>
-            <p>
-                <i class="fas fa-check-circle icon icon-green"></i>
-                <strong>Admin Ramah &amp; Responsif</strong> — Tim admin kami siap melayani Anda
-                <strong>24 jam nonstop</strong>, termasuk hari libur dan tanggal merah.
-                Tidak ada kata "tidak bisa" dalam melayani pelanggan. Kami selalu <strong>online</strong>.
-            </p>
-            <p>
-                <i class="fas fa-check-circle icon icon-green"></i>
-                <strong>Banyak Testimoni Positif</strong> — Ratusan pelanggan telah membuktikan
-                kualitas dan kepercayaan JB Jar Store. Testimoni positif berdatangan setiap hari
-                dari pelanggan yang puas. <strong>Bukti nyata</strong> kualitas kami.
-            </p>
-            <p>
-                <i class="fas fa-check-circle icon icon-green"></i>
-                <strong>Bisa MC (Main Candid) Dulu</strong> — Masih ragu? Tenang, kami persilakan
-                Anda untuk <strong>MC (Main Candid)</strong> terlebih dahulu sebelum memutuskan membeli.
-                Ini adalah bentuk <strong>kepercayaan dan transparansi</strong> kami kepada pelanggan.
-            </p>
-            <p>
-                <i class="fas fa-check-circle icon icon-green"></i>
-                <strong>Harga Kompetitif</strong> — Kami menawarkan harga yang tidak hanya murah,
-                tapi juga <strong>sebanding dengan kualitas</strong>. Anda mendapatkan akun berkualitas
-                dengan harga yang bersahabat. <strong>Murah bukan murahan</strong>.
-            </p>
-            <p>
-                <i class="fas fa-check-circle icon icon-green"></i>
-                <strong>Proses Transaksi Cepat</strong> — Dari chat hingga akun diterima,
-                prosesnya cepat dan efisien. Tidak ada birokrasi panjang yang bikin Anda bosan.
-                <strong>Fast response</strong> adalah motto kami.
-            </p>
+            <ul>
+                <li><strong>Garansi 100% Uang Kembali</strong> — No zonk! Kepuasan pelanggan adalah harga mati.</li>
+                <li><strong>Stok Selalu Tersedia</strong> — Update stok setiap pagi & malam. Akun segar terus!</li>
+                <li><strong>Admin Ramah &amp; Responsif</strong> — 24 jam nonstop, termasuk hari libur.</li>
+                <li><strong>Banyak Testimoni Positif</strong> — Ratusan pelanggan puas dan kembali lagi.</li>
+                <li><strong>Bisa MC (Main Candid) Dulu</strong> — Bukti kepercayaan & transparansi kami.</li>
+                <li><strong>Harga Kompetitif</strong> — Murah tapi berkualitas. <strong>Murah bukan murahan!</strong></li>
+                <li><strong>Proses Transaksi Cepat</strong> — Fast response! Dari chat sampai akun diterima.</li>
+            </ul>
         </div>
 
         <!-- ===== SECTION: GAME ===== -->
@@ -187,50 +172,69 @@
             <span class="game-tag">
                 <i class="fas fa-fire"></i> Free Fire
                 <span class="badge">ALLREF 10 Day</span>
+                <span class="badge-premium">PREMIUM</span>
             </span>
             <span class="game-tag">
                 <i class="fas fa-skull"></i> Mobile Legends
                 <span class="badge">ALLREF 15 Day</span>
+                <span class="badge-populer">POPULER</span>
             </span>
             <span class="game-tag">
                 <i class="fas fa-cube"></i> Roblox
                 <span class="badge">ALLREF 7 Day</span>
+                <span class="badge-terlaris">TERLARIS</span>
             </span>
         </div>
 
         <div class="about-box">
             <p>
                 <i class="fas fa-fire icon icon-orange"></i>
-                <strong>Free Fire (FF)</strong> — Tersedia berbagai macam akun Free Fire dengan
-                <span class="highlight">skin langka, bundle eksklusif, karakter terbaru,</span>
-                dan masih banyak lagi. Semua akun FF di sini adalah <strong>ALLREF 10 hari</strong>
-                dengan garansi penuh. Mulai dari budget 5K hingga 100K, semua ada!
-                <br /><em style="color:#8a7ab3;">🔥 Rank: Elite sampai Heroic tersedia.</em>
+                <strong>Free Fire (FF)</strong> — Skin langka, bundle eksklusif, karakter terbaru.
+                Rank Elite sampai Heroic tersedia. <strong>ALLREF 10 hari</strong> garansi penuh.
+                <br /><em style="color:#8a7ab3;">🔥 Mulai dari Rp 5.000!</em>
             </p>
             <p>
                 <i class="fas fa-skull icon" style="color:#8b5cf6;"></i>
-                <strong>Mobile Legends (ML)</strong> — Dapatkan akun Mobile Legends dengan
-                <span class="highlight">hero meta, skin kolektor, emblem lengkap,</span>
-                dan rank yang sudah di-push. Akun ML kami <strong>ALLREF 15 hari</strong>
-                dengan garansi uang kembali jika ada masalah.
-                <br /><em style="color:#8a7ab3;">👾 Tersedia akun Mythic hingga Glory.</em>
+                <strong>Mobile Legends (ML)</strong> — Hero meta, skin kolektor, emblem lengkap.
+                Rank Mythic hingga Glory tersedia. <strong>ALLREF 15 hari</strong> garansi.
+                <br /><em style="color:#8a7ab3;">👾 Mulai dari Rp 5.000!</em>
             </p>
             <p>
                 <i class="fas fa-cube icon icon-yellow"></i>
-                <strong>Roblox</strong> — Butuh akun Roblox dengan <span class="highlight">item langka,
-                robux banyak, atau gamepass keren?</span> Kami menyediakan stok Roblox dengan
-                <strong>ALLREF 7 hari</strong>. Stok Roblox tersedia sesuai permintaan,
-                jadi jangan ragu untuk chat admin!
-                <br /><em style="color:#8a7ab3;">🎮 Akun dengan limited item &amp; gamepass siap.</em>
+                <strong>Roblox</strong> — Item langka, robux banyak, gamepass keren.
+                <strong>ALLREF 7 hari</strong> garansi. Stok sesuai permintaan.
+                <br /><em style="color:#8a7ab3;">🎮 Mulai dari Rp 5.000!</em>
             </p>
             <p>
                 <i class="fas fa-plus-circle icon icon-pink"></i>
-                <strong>Game Lainnya?</strong> — Selain tiga game di atas, kami juga membuka
-                <span class="highlight">request game lainnya</span> seperti <span class="highlight">PUBG Mobile</span>,
-                <span class="highlight">Call of Duty Mobile</span>, <span class="highlight">Genshin Impact</span>,
-                atau game favorit Anda lainnya. Cukup chat admin, dan kami akan usahakan untuk menyediakannya.
-                <br /><em style="color:#8a7ab3;">💬 Request game apapun bisa!</em>
+                <strong>Game Lainnya?</strong> — Request game apapun! PUBG, CODM, Genshin Impact, dll.
+                Cukup chat admin, kami usahakan!
+                <br /><em style="color:#8a7ab3;">💬 Request = Usahakan!</em>
             </p>
+        </div>
+
+        <!-- ===== SECTION: HARGA ===== -->
+        <div class="section-title">
+            <i class="fas fa-tags"></i> Daftar Harga <i class="fas fa-tags"></i>
+        </div>
+
+        <div class="price-list">
+            <div class="price-item">
+                <span class="game-name">🔥 Free Fire</span>
+                <span class="price">Rp 5K - 100K</span>
+            </div>
+            <div class="price-item">
+                <span class="game-name">👾 Mobile Legends</span>
+                <span class="price">Rp 5K - 100K</span>
+            </div>
+            <div class="price-item">
+                <span class="game-name">🎮 Roblox</span>
+                <span class="price">Rp 5K - 100K</span>
+            </div>
+            <div class="price-item">
+                <span class="game-name">📦 Request Game</span>
+                <span class="price">Chat Admin</span>
+            </div>
         </div>
 
         <!-- ===== SECTION: SISTEM ===== -->
@@ -241,50 +245,33 @@
         <div class="about-box">
             <p>
                 <i class="fas fa-box icon"></i>
-                <strong>Sistem Stock</strong> — Kami menggunakan sistem stok yang terorganisir.
-                Ada dua kategori stok yang kami sediakan:
+                <strong>Sistem Stock</strong>
                 <br />
-                • <strong>ALLREF / PRIBADI / ADMIN</strong> → GARANSI FULL, akun segar dari admin langsung.
+                • <strong>ALLREF / PRIBADI / ADMIN</strong> → GARANSI FULL
                 <br />
-                • <strong>SEGER / BARU / FRESH</strong> → NO REFF, akun baru tanpa referal.
+                • <strong>SEGER / BARU / FRESH</strong> → NO REFF
                 <br />
-                <em style="color:#8a7ab3;">📦 Stok selalu di-update setiap hari.</em>
+                <em style="color:#8a7ab3;">📦 Update stok setiap hari!</em>
             </p>
             <p>
                 <i class="fas fa-money-bill-wave icon"></i>
-                <strong>Tawaran Stock Budget</strong> — Kami menyediakan berbagai pilihan akun
-                dengan <span class="highlight">budget mulai dari Rp 5.000</span>
-                hingga <span class="highlight">Rp 100.000</span>.
-                Sangat cocok untuk semua kalangan, dari pelajar hingga profesional.
+                <strong>Budget 5K - 100K</strong> — Cocok untuk semua kalangan!
                 <br /><em style="color:#8a7ab3;">💰 Ada paket hemat untuk pembelian banyak.</em>
             </p>
             <p>
                 <i class="fas fa-clock icon"></i>
-                <strong>24 Jam Aktif</strong> — Admin kami selalu siap sedia <strong>24 jam sehari, 7 hari seminggu</strong>.
-                Jadi Anda bisa bertransaksi kapan saja, bahkan di tengah malam sekalipun.
-                Kami siap melayani dengan sepenuh hati.
-                <br /><em style="color:#8a7ab3;">⏰ Nonstop! Tidak ada hari libur.</em>
+                <strong>24 Jam Aktif</strong> — Admin selalu online! Tidak ada hari libur.
+                <br /><em style="color:#8a7ab3;">⏰ Nonstop! Kapan saja Anda butuh.</em>
             </p>
             <p>
                 <i class="fas fa-shield-alt icon"></i>
-                <strong>Sistem Keamanan</strong> — Kami menggunakan protokol keamanan yang ketat
-                dalam setiap transaksi. Data Anda aman, dan privasi kami jaga dengan baik.
-                Tidak ada penyalahgunaan data pelanggan.
-                <br /><em style="color:#8a7ab3;">🔒 Privasi pelanggan adalah nomor satu.</em>
+                <strong>Sistem Keamanan</strong> — Data Anda aman, privasi terjaga.
+                <br /><em style="color:#8a7ab3;">🔒 Privasi pelanggan nomor satu!</em>
             </p>
             <p>
                 <i class="fas fa-handshake icon"></i>
-                <strong>Metode Pembayaran</strong> — Kami menerima berbagai metode pembayaran
-                yang memudahkan Anda. Mulai dari <span class="highlight">transfer bank, e-wallet (DANA, OVO, GOPAY),
-                hingga pulsa</span>. Semua bisa disesuaikan dengan kenyamanan Anda.
-                <br /><em style="color:#8a7ab3;">💳 Banyak pilihan, semua aman.</em>
-            </p>
-            <p>
-                <i class="fas fa-info-circle icon"></i>
-                <strong>Boleh Tanya-tanya Dulu</strong> — Kami sangat terbuka dengan pertanyaan Anda.
-                Mau tanya stok? Mau tanya harga? Mau minta rekomendasi? <span class="highlight">Semua boleh!</span>
-                Kami siap membantu dengan ramah dan profesional.
-                <br /><em style="color:#8a7ab3;">🤝 Jangan sungkan untuk bertanya.</em>
+                <strong>Metode Pembayaran</strong> — Bank, e-wallet (DANA, OVO, GOPAY), pulsa.
+                <br /><em style="color:#8a7ab3;">💳 Banyak pilihan, semua aman!</em>
             </p>
         </div>
 
@@ -298,6 +285,7 @@
             <div class="payment-icon">
                 <i class="fas fa-wallet" style="color:#2b7a3a; font-size:28px;"></i>
                 <span style="font-weight:800; color:#2b7a3a; font-size:16px;">DANA</span>
+                <span class="badge-terlaris" style="font-size:7px;">FAVORIT</span>
             </div>
             <div class="payment-detail">
                 <p><strong>Nomor DANA:</strong> <span class="copy-number" onclick="copyNumber('083175975689')">0831-7597-5689 <i class="fa-regular fa-copy" style="font-size:12px; color:#a855f7; cursor:pointer;"></i></span></p>
@@ -314,6 +302,7 @@
             <div class="payment-icon">
                 <i class="fas fa-qrcode" style="color:#8b5cf6; font-size:28px;"></i>
                 <span style="font-weight:800; color:#8b5cf6; font-size:16px;">QRIS</span>
+                <span class="badge-premium" style="font-size:7px;">PRAKTIS</span>
             </div>
             <div class="payment-detail">
                 <p style="color:#c8bde6;">Scan QRIS untuk pembayaran via semua e-wallet &amp; mobile banking.</p>
@@ -353,13 +342,13 @@
                 <div class="channel-detail">
                     <p style="font-weight:700; color:#c084fc; font-size:16px;">Saluran Info Daget</p>
                     <p style="color:#c8bde6; font-size:13px; line-height:1.8;">
-                        Dapatkan <span class="highlight">update stok terbaru</span>, 
-                        <span class="highlight">info promo</span>, dan 
-                        <span class="highlight">testimoni pelanggan</span> 
+                        Dapatkan <span class="highlight">update stok terbaru</span>,
+                        <span class="highlight">info promo</span>, dan
+                        <span class="highlight">testimoni pelanggan</span>
                         langsung dari saluran resmi JB Jar Store!
                     </p>
                     <p style="font-size:12px; color:#8a7ab3;">
-                        <i class="fas fa-clock"></i> Update stok setiap hari • 
+                        <i class="fas fa-clock"></i> Update stok setiap hari •
                         <i class="fas fa-users"></i> Ratusan member aktif
                     </p>
                 </div>
@@ -375,43 +364,43 @@
             <i class="fas fa-quote-left"></i> Kata Mereka <i class="fas fa-quote-right"></i>
         </div>
 
-        <div class="about-box">
-            <p>
-                <i class="fas fa-user icon icon-green"></i>
-                <strong>Andi (FF Player)</strong> — "Mantap banget akunnya! Langsung masuk,
-                garansi beneran. Udah langganan di sini, ga pernah zonk. Recomended banget!
-                <br /><em style="color:#8a7ab3;">⭐ ⭐ ⭐ ⭐ ⭐</em>"
-            </p>
-            <p>
-                <i class="fas fa-user icon icon-green"></i>
-                <strong>Siti (ML Player)</strong> — "Pelayanannya ramah banget, adminnya sabar
-                banget ngejelasin. Akunnya juga sesuai sama yang dipesen. Makasih JB Jar Store!
-                <br /><em style="color:#8a7ab3;">⭐ ⭐ ⭐ ⭐ ⭐</em>"
-            </p>
-            <p>
-                <i class="fas fa-user icon icon-green"></i>
-                <strong>Rizky (Roblox Collector)</strong> — "Langka banget dapet item Roblox di sini.
-                Prosesnya cepet, ga pake lama. Nanti mau beli lagi pasti!
-                <br /><em style="color:#8a7ab3;">⭐ ⭐ ⭐ ⭐ ⭐</em>"
-            </p>
-            <p>
-                <i class="fas fa-user icon icon-green"></i>
-                <strong>Dewi (Newbie)</strong> — "Aku baru pertama kali beli akun, takut ketipu.
-                Tapi di JB Jar Store malah dibimbing sama adminnya. Akunnya aman, thank you!
-                <br /><em style="color:#8a7ab3;">⭐ ⭐ ⭐ ⭐ ⭐</em>"
-            </p>
-            <p>
-                <i class="fas fa-user icon icon-green"></i>
-                <strong>Fajar (Collector)</strong> — "Udah beli 5x di sini, ga pernah mengecewakan.
-                Stok selalu update, admin selalu online. #ALLAMAN beneran!
-                <br /><em style="color:#8a7ab3;">⭐ ⭐ ⭐ ⭐ ⭐</em>"
-            </p>
-            <p>
-                <i class="fas fa-user icon icon-green"></i>
-                <strong>Rina (Gamer)</strong> — "Pelayanan cepat, harga murah, akun berkualitas.
-                Nggak nyesel pilih JB Jar Store. Makin kesini makin betah!
-                <br /><em style="color:#8a7ab3;">⭐ ⭐ ⭐ ⭐ ⭐</em>"
-            </p>
+        <div class="testimoni-grid">
+            <div class="testimoni-card">
+                <span class="user">Andi</span>
+                <span class="game">🔥 FF Player</span>
+                <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+                <div class="text">"Mantap banget akunnya! Langsung masuk, garansi beneran. Udah langganan di sini!"</div>
+            </div>
+            <div class="testimoni-card">
+                <span class="user">Siti</span>
+                <span class="game">👾 ML Player</span>
+                <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+                <div class="text">"Pelayanannya ramah banget, admin sabar ngejelasin. Akun sesuai pesenan!"</div>
+            </div>
+            <div class="testimoni-card">
+                <span class="user">Rizky</span>
+                <span class="game">🎮 Roblox Collector</span>
+                <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+                <div class="text">"Langka banget dapet item Roblox di sini. Proses cepet, ga pake lama!"</div>
+            </div>
+            <div class="testimoni-card">
+                <span class="user">Dewi</span>
+                <span class="game">🌟 Newbie</span>
+                <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+                <div class="text">"Aku baru pertama kali beli, takut ketipu. Tapi di sini malah dibimbing adminnya!"</div>
+            </div>
+            <div class="testimoni-card">
+                <span class="user">Fajar</span>
+                <span class="game">💎 Collector</span>
+                <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+                <div class="text">"Udah beli 5x di sini, ga pernah mengecewakan. Stok selalu update!"</div>
+            </div>
+            <div class="testimoni-card">
+                <span class="user">Rina</span>
+                <span class="game">🎯 Gamer</span>
+                <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+                <div class="text">"Pelayanan cepat, harga murah, akun berkualitas. Nggak nyesel pilih ini!"</div>
+            </div>
         </div>
 
         <!-- ===== SECTION: TIPS KEAMANAN ===== -->
@@ -428,20 +417,18 @@
             </p>
             <p>
                 <i class="fas fa-eye icon icon-orange"></i>
-                <strong>Cek Testimoni</strong> — Sebelum membeli, pastikan Anda sudah melihat
-                testimoni dari pelanggan lain. Ini akan membantu Anda lebih yakin dengan kualitas kami.
-                Testimoni asli dari pelanggan yang sudah <strong>terbukti</strong>.
+                <strong>Cek Testimoni</strong> — Sebelum membeli, lihat testimoni pelanggan lain.
+                Ini bukti nyata kualitas kami!
             </p>
             <p>
                 <i class="fas fa-handshake icon icon-orange"></i>
-                <strong>Jangan Ragu Bertanya</strong> — Jika Anda ragu atau bingung,
-                <span class="highlight">jangan ragu untuk bertanya</span> ke admin kami.
-                Kami siap menjelaskan dengan detail dan jelas. <strong>No toxic</strong> di sini.
+                <strong>Jangan Ragu Bertanya</strong> — <span class="highlight">Jangan ragu bertanya</span>
+                ke admin. Kami siap menjelaskan dengan detail dan jelas. <strong>No toxic!</strong>
             </p>
             <p>
                 <i class="fas fa-check-circle icon icon-orange"></i>
                 <strong>Gunakan MC (Main Candid)</strong> — Manfaatkan fasilitas MC yang kami sediakan
-                untuk memastikan akun sesuai dengan keinginan Anda. Ini adalah <strong>bukti kepercayaan</strong> kami.
+                untuk memastikan akun sesuai dengan keinginan Anda.
             </p>
         </div>
 
