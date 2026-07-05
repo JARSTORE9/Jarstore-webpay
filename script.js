@@ -12,19 +12,43 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('📱 Created with love for JB Jar Store');
 
     // ============================================================
-    // 1. MENU BUTTON
+    // 1. PARTICLES GENERATOR
+    // ============================================================
+    function createParticles() {
+        const container = document.getElementById('particlesContainer');
+        if (!container) return;
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.width = (Math.random() * 4 + 2) + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.animationDuration = (Math.random() * 15 + 10) + 's';
+            particle.style.animationDelay = (Math.random() * 10) + 's';
+            particle.style.opacity = Math.random() * 0.5 + 0.2;
+            container.appendChild(particle);
+        }
+    }
+    createParticles();
+
+    // ============================================================
+    // 2. MENU BUTTON
     // ============================================================
     const menuBtn = document.getElementById('navMenuBtn');
     if (menuBtn) {
         menuBtn.addEventListener('click', function() {
             alert(
-                '📋 MENU JB JAR STORE\n\n' +
+                '📋 MENU JB JAR STORE\n' +
+                '═══════════════════════\n\n' +
                 '🏠 Home\n' +
                 '💳 Payment (DANA & QRIS)\n' +
                 '📹 Video Profile\n' +
                 '📞 Contact (WA & IG)\n' +
                 '🎮 Games (FF, ML, Roblox)\n' +
-                '📢 Info Daget & Stok\n\n' +
+                '📢 Info Daget & Stok\n' +
+                '⭐ Testimoni\n' +
+                '🔒 Tips Keamanan\n\n' +
+                '═══════════════════════\n' +
                 'Fitur akan segera hadir!\n' +
                 'Stay tuned! 🔥'
             );
@@ -32,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================================
-    // 2. COPY NUMBER
+    // 3. COPY NUMBER
     // ============================================================
     window.copyNumber = function(number) {
         if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -59,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================================
-    // 3. TOAST NOTIFICATION
+    // 4. TOAST NOTIFICATION
     // ============================================================
     function showToast(message) {
         const oldToast = document.querySelector('.toast-notification');
@@ -114,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================================
-    // 4. QRIS REQUEST
+    // 5. QRIS REQUEST
     // ============================================================
     window.requestQris = function() {
         const waNumber = '6283175975689';
@@ -125,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // ============================================================
-    // 5. VIDEO PLAY / PAUSE TOGGLE
+    // 6. VIDEO PLAY / PAUSE TOGGLE
     // ============================================================
     const video = document.getElementById('mainVideo');
     const overlay = document.getElementById('videoOverlay');
@@ -172,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================================
-    // 6. CHANNEL CLICK TRACKING
+    // 7. CHANNEL CLICK TRACKING
     // ============================================================
     const channelBtn = document.querySelector('.btn-channel');
     if (channelBtn) {
@@ -183,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================================
-    // 7. DETEKSI PERANGKAT
+    // 8. DETEKSI PERANGKAT
     // ============================================================
     const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|Opera Mini|IEMobile/i.test(navigator.userAgent);
     if (isMobile) {
@@ -195,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================================
-    // 8. CEK TAHUN & UPDATE FOOTER
+    // 9. CEK TAHUN & UPDATE FOOTER
     // ============================================================
     const yearEl = document.querySelector('.footer .version');
     if (yearEl) {
@@ -206,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================================
-    // 9. KEYBOARD SHORTCUT
+    // 10. KEYBOARD SHORTCUT
     // ============================================================
     document.addEventListener('keydown', function(e) {
         // Alt + 1 = Copy DANA
