@@ -43,6 +43,15 @@
             </div>
         </div>
 
+        <!-- ===== BANNER ===== -->
+        <div class="banner-wrapper">
+            <img src="assets/Banner.jpg" alt="JB Jar Store Banner" class="banner-img">
+            <div class="banner-overlay">
+                <h2>JB JAR STORE</h2>
+                <p>Jual Beli Akun Game Terpercaya & Amanah</p>
+            </div>
+        </div>
+
         <!-- ===== PROFILE ===== -->
         <div class="profile-section">
             <div class="profile-pic">
@@ -78,15 +87,73 @@
 
         <!-- ===== BUTTONS ===== -->
         <div class="btn-list">
-            <button class="btn btn-dana" onclick="copyNumber('088212210329')">
+            <button class="btn btn-dana" onclick="showDana()">
                 <i class="fa-solid fa-wallet"></i> DANA PAYMENT
             </button>
-            <button class="btn btn-gopay" onclick="copyNumber('083175975689')">
+            <button class="btn btn-gopay" onclick="showGopay()">
                 <i class="fa-solid fa-coins"></i> GOPAY PAYMENT
             </button>
             <button class="btn btn-qris" onclick="requestQris()">
                 <i class="fa-solid fa-qrcode"></i> QRIS PAYMENT
             </button>
+        </div>
+
+        <!-- ===== MODAL DANA ===== -->
+        <div id="danaModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3><i class="fa-solid fa-wallet" style="color:#2b7a3a;"></i> DANA PAYMENT</h3>
+                    <button class="modal-close" onclick="closeModal('danaModal')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="payment-info">
+                        <div class="info-item">
+                            <span class="label">💳 Nomor DANA</span>
+                            <span class="value copy-number" onclick="copyNumber('088212210329')">0882-1221-0329 <i class="fa-regular fa-copy"></i></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">👤 A/N</span>
+                            <span class="value">L*L*</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">📌 Status</span>
+                            <span class="value status-active">✅ AKTIF</span>
+                        </div>
+                    </div>
+                    <button class="btn-modal-copy" onclick="copyNumber('088212210329')">
+                        <i class="fa-regular fa-copy"></i> Copy Nomor DANA
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== MODAL GOPAY ===== -->
+        <div id="gopayModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3><i class="fa-solid fa-coins" style="color:#1a8a7a;"></i> GOPAY PAYMENT</h3>
+                    <button class="modal-close" onclick="closeModal('gopayModal')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="payment-info">
+                        <div class="info-item">
+                            <span class="label">💳 Nomor GOPAY</span>
+                            <span class="value copy-number" onclick="copyNumber('083175975689')">0831-7597-5689 <i class="fa-regular fa-copy"></i></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">👤 A/N</span>
+                            <span class="value">J*R ST*RE</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">📌 Status</span>
+                            <span class="value status-active">✅ AKTIF</span>
+                        </div>
+                    </div>
+                    <button class="btn-modal-copy" onclick="copyNumber('083175975689')">
+                        <i class="fa-regular fa-copy"></i> Copy Nomor GOPAY
+                    </button>
+                </div>
+            </div>
         </div>
 
         <!-- ===== CHANNEL BUTTON ===== -->
