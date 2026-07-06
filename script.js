@@ -36,10 +36,9 @@ function hideLoading() {
 
     const video = document.getElementById('mainVideo');
     if (video) {
-        // PLAY VIDEO DENGAN SUARA!
         video.muted = false;
         video.play().catch(function(e) {
-            console.log('Autoplay with sound error:', e);
+            console.log('Autoplay error:', e);
         });
     }
 }
@@ -102,6 +101,59 @@ function requestQris() {
     showToast('📱 Diarahkan ke WhatsApp...');
 }
 
+// ===== MODAL =====
+function showDana() {
+    document.getElementById('danaModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function showGopay() {
+    document.getElementById('gopayModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal(id) {
+    document.getElementById(id).classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Tutup modal kalo klik di luar
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('modal')) {
+        e.target.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
+
+// ===== VIDEO AUTO SUARA =====
+function setupVideo() {
+    const video = document.getElementById('mainVideo');
+    if (!video) return;
+
+    video.muted = false;
+    video.autoplay = true;
+    video.loop = true;
+    video.playsInline = true;
+
+    video.play().catch(function(e) {
+        console.log('Autoplay error:', e);
+        document.addEventListener('click', function playOnce() {
+            video.play().catch(function() {});
+            document.removeEventListener('click', playOnce);
+        });
+    });
+
+    video.addEventListener('pause', function() {
+        setTimeout(function() {
+            if (video.paused) {
+                video.play().catch(function() {});
+            }
+        }, 100);
+    });
+
+    console.log('🎬 Video auto suara aktif! 🔊');
+}
+
 // ===== MENU =====
 function showMenu() {
     alert(
@@ -118,48 +170,11 @@ function showMenu() {
     );
 }
 
-// ===== VIDEO AUTO SUARA =====
-function setupVideo() {
-    const video = document.getElementById('mainVideo');
-    if (!video) return;
-
-    // ===== UNMUTE =====
-    video.muted = false;
-    video.autoplay = true;
-    video.loop = true;
-    video.playsInline = true;
-
-    // Coba play
-    video.play().catch(function(e) {
-        console.log('Autoplay error:', e);
-        // Kalo error karena browser, coba lagi pake interaksi
-        document.addEventListener('click', function playOnce() {
-            video.play().catch(function() {});
-            document.removeEventListener('click', playOnce);
-        });
-    });
-
-    // ===== PAKSA PLAY TERUS =====
-    video.addEventListener('pause', function() {
-        setTimeout(function() {
-            if (video.paused) {
-                video.play().catch(function() {});
-            }
-        }, 100);
-    });
-
-    video.addEventListener('error', function(e) {
-        console.warn('⚠️ Video error:', e);
-    });
-
-    console.log('🎬 Video auto suara aktif! 🔊');
-}
-
 // ===== START =====
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🔥 JB Jar Store loaded!');
     console.log('💜 #ALLAMAN #AMANAH');
-    console.log('✨ Animasi goyang halus aktif!');
+    console.log('✨ Animasi smooth aktif!');
 
     setupVideo();
     startLoading();
