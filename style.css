@@ -13,6 +13,29 @@ body {
     justify-content: center;
     align-items: center;
     padding: 16px;
+    position: relative;
+}
+
+/* ===== BACKGROUND GLOW ===== */
+body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background:
+        radial-gradient(ellipse at 20% 30%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(236, 72, 153, 0.08) 0%, transparent 45%),
+        radial-gradient(ellipse at 50% 50%, rgba(139, 92, 246, 0.05) 0%, transparent 60%);
+    animation: bgPulse 15s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+@keyframes bgPulse {
+    0% { transform: scale(1) rotate(0deg); opacity: 0.6; }
+    50% { transform: scale(1.08) rotate(2deg); opacity: 1; }
+    100% { transform: scale(1.12) rotate(-1deg); opacity: 0.8; }
 }
 
 /* ============================================================
@@ -27,17 +50,17 @@ body {
 
 @keyframes gentleButton {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-2px); }
+    50% { transform: translateY(-3px); }
 }
 
 @keyframes gentleSocial {
     0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-3px) scale(1.02); }
+    50% { transform: translateY(-4px) scale(1.03); }
 }
 
 @keyframes gentleProfile {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-4px); }
+    50% { transform: translateY(-5px); }
 }
 
 @keyframes gentleText {
@@ -48,6 +71,11 @@ body {
 @keyframes ringSpin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+@keyframes ringSpinReverse {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
 }
 
 @keyframes dotBlink {
@@ -67,7 +95,17 @@ body {
 
 @keyframes bannerFloat {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.02); }
+    50% { transform: scale(1.01); }
+}
+
+@keyframes glowPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+}
+
+@keyframes neonPulse {
+    0%, 100% { text-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+    50% { text-shadow: 0 0 40px rgba(139, 92, 246, 0.6), 0 0 80px rgba(139, 92, 246, 0.2); }
 }
 
 /* ============================================================
@@ -125,6 +163,19 @@ body {
     animation: ringSpin 1.5s linear infinite;
 }
 
+.loader-ring-2 {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+    border-left: 1px solid rgba(139, 92, 246, 0.2);
+    animation: ringSpinReverse 2s linear infinite;
+}
+
 @keyframes logoPulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
@@ -142,9 +193,16 @@ body {
 .loader-bar {
     width: 0%;
     height: 100%;
-    background: linear-gradient(90deg, #8b5cf6, #a855f7, #ec4899);
+    background: linear-gradient(90deg, #8b5cf6, #a855f7, #ec4899, #a855f7);
+    background-size: 300% 100%;
     border-radius: 10px;
     transition: width 0.1s linear;
+    animation: barShine 2s linear infinite;
+}
+
+@keyframes barShine {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 300% 0%; }
 }
 
 .loader-text {
@@ -173,6 +231,7 @@ body {
 .skip-btn:hover {
     background: rgba(139, 92, 246, 0.2);
     transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.1);
 }
 
 /* ============================================================
@@ -187,9 +246,9 @@ body {
     -webkit-backdrop-filter: blur(30px);
     border-radius: 32px;
     padding: 24px 20px 30px;
-    border: 1px solid rgba(139, 92, 246, 0.06);
+    border: 1px solid rgba(139, 92, 246, 0.08);
     animation: fadeIn 0.6s ease forwards;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 80px rgba(139, 92, 246, 0.03);
 }
 
 .hidden {
@@ -236,7 +295,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 0.5px;
-    animation: gentleText 2.5s ease-in-out infinite;
+    animation: neonPulse 2.5s ease-in-out infinite;
 }
 
 .nav-right {
@@ -281,6 +340,7 @@ body {
     background: rgba(139, 92, 246, 0.12);
     color: #a855f7;
     transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.05);
 }
 
 /* ============================================================
@@ -292,14 +352,14 @@ body {
     border-radius: 16px;
     overflow: hidden;
     margin-bottom: 16px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 50px rgba(139, 92, 246, 0.05);
     border: 1px solid rgba(139, 92, 246, 0.08);
     animation: bannerFloat 4s ease-in-out infinite;
 }
 
 .banner-img {
     width: 100%;
-    height: 150px;
+    height: 160px;
     object-fit: cover;
     display: block;
     border-radius: 16px;
@@ -310,23 +370,101 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 20px 16px 16px;
-    background: linear-gradient(0deg, rgba(10,6,24,0.85) 0%, transparent 100%);
+    padding: 24px 16px 16px;
+    background: linear-gradient(0deg, rgba(10, 6, 24, 0.9) 0%, transparent 100%);
+}
+
+.banner-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 50% 100%, rgba(139, 92, 246, 0.1), transparent 70%);
+    pointer-events: none;
 }
 
 .banner-overlay h2 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 900;
-    background: linear-gradient(135deg, #a855f7, #ec4899);
+    background: linear-gradient(135deg, #a855f7, #ec4899, #8b5cf6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 2px;
+    animation: neonPulse 3s ease-in-out infinite;
 }
 
 .banner-overlay p {
     font-size: 11px;
     color: #c8bde6;
     font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.banner-badges {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.badge-neon {
+    font-size: 7px;
+    font-weight: 700;
+    color: #a78bfa;
+    background: rgba(139, 92, 246, 0.08);
+    padding: 2px 12px;
+    border-radius: 30px;
+    border: 1px solid rgba(139, 92, 246, 0.1);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* ============================================================
+   STATS
+   ============================================================ */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.stat-item {
+    background: rgba(139, 92, 246, 0.05);
+    border: 1px solid rgba(139, 92, 246, 0.06);
+    border-radius: 14px;
+    padding: 12px 6px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    background: rgba(139, 92, 246, 0.10);
+    transform: translateY(-2px);
+    border-color: rgba(139, 92, 246, 0.12);
+}
+
+.stat-item i {
+    color: #a855f7;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.stat-item .number {
+    font-size: 20px;
+    font-weight: 900;
+    color: #c084fc;
+    display: block;
+}
+
+.stat-item .label {
+    font-size: 9px;
+    color: #8a7ab3;
+    font-weight: 500;
+    text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
@@ -373,6 +511,19 @@ body {
     animation: ringSpin 3s linear infinite;
 }
 
+.profile-ring-2 {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+    border-left: 1px solid rgba(139, 92, 246, 0.15);
+    animation: ringSpinReverse 4s linear infinite;
+}
+
 .verified {
     position: absolute;
     bottom: 0;
@@ -401,7 +552,34 @@ body {
     -webkit-text-fill-color: transparent;
     margin-top: 8px;
     letter-spacing: 0.5px;
-    animation: gentleText 3s ease-in-out infinite;
+    animation: neonPulse 3s ease-in-out infinite;
+}
+
+.profile-badges {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 6px 0 8px;
+}
+
+.badge-premium {
+    font-size: 8px;
+    font-weight: 700;
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.08);
+    padding: 2px 12px;
+    border-radius: 30px;
+    border: 1px solid rgba(245, 158, 11, 0.1);
+}
+
+.badge-verified {
+    font-size: 8px;
+    font-weight: 700;
+    color: #22c55e;
+    background: rgba(34, 197, 94, 0.08);
+    padding: 2px 12px;
+    border-radius: 30px;
+    border: 1px solid rgba(34, 197, 94, 0.1);
 }
 
 .profile-link {
@@ -435,7 +613,7 @@ body {
     overflow: hidden;
     margin: 10px 0 16px;
     border: 1px solid rgba(139, 92, 246, 0.08);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 50px rgba(139, 92, 246, 0.03);
     background: #000;
     aspect-ratio: 16 / 9;
     width: 100%;
@@ -450,17 +628,28 @@ body {
     border-radius: 16px;
 }
 
+.video-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-radius: 16px;
+    box-shadow: inset 0 0 80px rgba(139, 92, 246, 0.03);
+}
+
 .video-badge {
     position: absolute;
     top: 12px;
     right: 12px;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
     padding: 4px 10px;
     border-radius: 30px;
     font-size: 12px;
     color: #fff;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     align-items: center;
     gap: 4px;
@@ -500,7 +689,7 @@ body {
     color: #a855f7;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    animation: gentleText 2.8s ease-in-out infinite 0.5s;
+    animation: neonPulse 2.5s ease-in-out infinite;
 }
 
 /* ============================================================
@@ -544,7 +733,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
     transition: left 0.8s ease;
 }
 
@@ -556,6 +745,14 @@ body {
 }
 
 .btn:active { transform: scale(0.97); }
+
+.btn .btn-badge {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1px 10px;
+    border-radius: 30px;
+    font-size: 8px;
+    font-weight: 600;
+}
 
 .btn-dana {
     background: linear-gradient(135deg, #2b7a3a, #1a5a2a);
@@ -581,35 +778,180 @@ body {
 .btn i { font-size: 18px; }
 
 /* ============================================================
+   CHANNEL BUTTON
+   ============================================================ */
+
+.btn-channel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 14px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.15);
+    width: 100%;
+    margin-bottom: 14px;
+    animation: gentleButton 3s ease-in-out infinite 0.9s;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn-channel:hover {
+    transform: scale(1.03) translateY(-3px);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.30);
+}
+
+.btn-channel:active { transform: scale(0.97); }
+
+.btn-channel i { font-size: 18px; }
+
+.btn-channel .badge-channel {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 2px 12px;
+    border-radius: 30px;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================================
+   SOSMED
+   ============================================================ */
+
+.sosmed-section {
+    text-align: center;
+    padding-top: 14px;
+    border-top: 1px solid rgba(139, 92, 246, 0.06);
+}
+
+.sosmed-title {
+    font-size: 9px;
+    font-weight: 700;
+    color: #8a7ab3;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    animation: gentleText 3s ease-in-out infinite;
+}
+
+.sosmed-grid {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.sosmed-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: gentleSocial 3.5s ease-in-out infinite;
+    gap: 2px;
+}
+
+.sosmed-icon:nth-child(2) { animation-delay: 0.5s; }
+.sosmed-icon:nth-child(3) { animation-delay: 1s; }
+
+.sosmed-icon:hover {
+    transform: translateY(-5px) scale(1.08);
+}
+
+.sosmed-icon span {
+    font-size: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+.sosmed-icon.wa {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+}
+
+.sosmed-icon.wa:hover { box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35); }
+
+.sosmed-icon.ig {
+    background: linear-gradient(135deg, #E4405F, #C13584);
+    box-shadow: 0 4px 15px rgba(228, 64, 95, 0.2);
+}
+
+.sosmed-icon.ig:hover { box-shadow: 0 8px 30px rgba(228, 64, 95, 0.35); }
+
+.sosmed-icon.channel-btn {
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+}
+
+.sosmed-icon.channel-btn:hover { box-shadow: 0 8px 30px rgba(139, 92, 246, 0.35); }
+
+/* ============================================================
    MODAL
    ============================================================ */
 
 .modal {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(10px);
     z-index: 9998;
+    display: none;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
 
-.modal.active {
-    display: flex;
+.modal.show {
+    display: flex !important;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    cursor: pointer;
 }
 
 .modal-content {
-    background: rgba(16, 12, 40, 0.95);
-    border-radius: 24px;
+    position: relative;
+    z-index: 1;
     max-width: 380px;
     width: 100%;
+    background: rgba(16, 12, 40, 0.95);
+    border-radius: 24px;
     border: 1px solid rgba(139, 92, 246, 0.1);
     animation: modalIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 80px rgba(139, 92, 246, 0.03);
+}
+
+.modal-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 50% 50%, rgba(139, 92, 246, 0.03), transparent 70%);
+    pointer-events: none;
 }
 
 .modal-header {
@@ -725,110 +1067,6 @@ body {
 }
 
 /* ============================================================
-   CHANNEL BUTTON
-   ============================================================ */
-
-.btn-channel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 12px 16px;
-    border-radius: 14px;
-    font-size: 13px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    background: linear-gradient(135deg, #25D366, #128C7E);
-    color: #fff;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.15);
-    width: 100%;
-    margin-bottom: 14px;
-    animation: gentleButton 3s ease-in-out infinite 0.9s;
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
-}
-
-.btn-channel:hover {
-    transform: scale(1.03) translateY(-3px);
-    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.30);
-}
-
-.btn-channel:active { transform: scale(0.97); }
-
-.btn-channel i { font-size: 18px; }
-
-.btn-channel .badge-channel {
-    background: rgba(255,255,255,0.12);
-    padding: 2px 12px;
-    border-radius: 30px;
-    font-size: 8px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-/* ============================================================
-   SOSMED
-   ============================================================ */
-
-.sosmed-section {
-    text-align: center;
-    padding-top: 14px;
-    border-top: 1px solid rgba(139, 92, 246, 0.06);
-}
-
-.sosmed-title {
-    font-size: 9px;
-    font-weight: 700;
-    color: #8a7ab3;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    animation: gentleText 3s ease-in-out infinite;
-}
-
-.sosmed-grid {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-}
-
-.sosmed-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    color: #fff;
-    text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    animation: gentleSocial 3.5s ease-in-out infinite;
-}
-
-.sosmed-icon:nth-child(2) { animation-delay: 0.5s; }
-
-.sosmed-icon:hover {
-    transform: translateY(-5px) scale(1.08);
-}
-
-.sosmed-icon.wa {
-    background: linear-gradient(135deg, #25D366, #128C7E);
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
-}
-
-.sosmed-icon.wa:hover { box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35); }
-
-.sosmed-icon.ig {
-    background: linear-gradient(135deg, #E4405F, #C13584);
-    box-shadow: 0 4px 15px rgba(228, 64, 95, 0.2);
-}
-
-.sosmed-icon.ig:hover { box-shadow: 0 8px 30px rgba(228, 64, 95, 0.35); }
-
-/* ============================================================
    FOOTER
    ============================================================ */
 
@@ -837,6 +1075,18 @@ body {
     margin-top: 18px;
     padding-top: 14px;
     border-top: 1px solid rgba(139, 92, 246, 0.06);
+    position: relative;
+}
+
+.footer-glow {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 20px;
+    background: radial-gradient(ellipse, rgba(139, 92, 246, 0.05), transparent 70%);
+    pointer-events: none;
 }
 
 .dev-label {
@@ -856,7 +1106,28 @@ body {
     -webkit-text-fill-color: transparent;
     margin-top: 2px;
     letter-spacing: 1px;
-    animation: gentleText 3s ease-in-out infinite 0.5s;
+    animation: neonPulse 3s ease-in-out infinite;
+}
+
+.footer-tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 6px;
+    flex-wrap: wrap;
+}
+
+.footer-tags span {
+    font-size: 7px;
+    color: #4a3b66;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.footer-copy {
+    font-size: 7px;
+    color: #3d2f55;
+    margin-top: 4px;
 }
 
 /* ============================================================
@@ -876,7 +1147,7 @@ body {
     font-size: 13px;
     font-weight: 600;
     border: 1px solid rgba(139, 92, 246, 0.1);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     z-index: 9999;
     opacity: 0;
     transition: all 0.4s ease;
@@ -900,9 +1171,11 @@ body {
     .btn i { font-size: 16px; }
     .profile-pic img { width: 68px; height: 68px; }
     .profile-ring { width: 76px; height: 76px; }
+    .profile-ring-2 { width: 84px; height: 84px; }
     .verified { width: 18px; height: 18px; }
     .verified i { font-size: 9px; }
-    .sosmed-icon { width: 38px; height: 38px; font-size: 17px; }
+    .sosmed-icon { width: 44px; height: 44px; font-size: 16px; }
+    .sosmed-icon span { font-size: 5px; }
     .nav-label { font-size: 7px; letter-spacing: 1px; }
     .nav-brand { font-size: 9px; }
     .payment-header .left,
@@ -920,4 +1193,11 @@ body {
     .modal-header h3 { font-size: 14px; }
     .info-item { flex-direction: column; align-items: flex-start; gap: 4px; }
     .info-item .value { font-size: 13px; }
+    .stats-grid { gap: 6px; }
+    .stat-item .number { font-size: 16px; }
+    .stat-item { padding: 8px 4px; }
+    .banner-badges .badge-neon { font-size: 6px; padding: 1px 8px; }
+    .profile-badges .badge-premium,
+    .profile-badges .badge-verified { font-size: 7px; padding: 1px 8px; }
+    .btn .btn-badge { font-size: 7px; padding: 1px 8px; }
 }
