@@ -1,447 +1,91 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-    <title>JB Jar Store - Jual Beli Akun Game Terpercaya</title>
-    <meta name="description" content="JB Jar Store - Tempat jual beli akun game terpercaya. Free Fire, Mobile Legends, Roblox. Garansi full & amanah." />
-    <meta name="keywords" content="JB Jar Store, jual beli akun, free fire, mobile legends, roblox, akun game murah" />
-    <meta name="author" content="JB Jar Store" />
-    <meta property="og:title" content="JB Jar Store - Jual Beli Akun Game Terpercaya" />
-    <meta property="og:description" content="Tempat jual beli akun game terpercaya. Free Fire, Mobile Legends, Roblox. Garansi full & amanah." />
-    <meta property="og:image" content="assets/logo profile.jpg" />
-    <meta property="og:type" content="website" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>JB Jar Store - Payment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="glow-overlay"></div>
-    <div class="particles-container" id="particlesContainer"></div>
+    <!-- ===== LOADING SCREEN ===== -->
+    <div id="loadingScreen">
+        <div class="loader-container">
+            <div class="loader-logo">
+                <img src="assets/logo profile.jpg" alt="JB Jar Store">
+            </div>
+            <div class="loader-bar-wrapper">
+                <div class="loader-bar" id="loaderBar"></div>
+            </div>
+            <p class="loader-text" id="loaderText">Loading...</p>
+            <button class="skip-btn" onclick="skipLoading()">SKIP LOADING</button>
+        </div>
+    </div>
 
-    <div class="container">
+    <!-- ===== MAIN CONTENT ===== -->
+    <div id="mainContent" class="main-content hidden">
 
-        <!-- ===== TOP NAV ===== -->
+        <!-- TOP NAV -->
         <div class="top-nav">
             <div class="nav-left">
-                <span class="nav-label">✦ JB JAR STORE</span>
+                <span class="nav-label">DIGITALS PAYMENT</span>
                 <span class="nav-divider">/</span>
-                <span class="nav-brand">#AMANAH</span>
+                <span class="nav-brand">JB JAR STORE</span>
             </div>
-            <div class="nav-right">
-                <button class="nav-menu-btn" id="navMenuBtn" aria-label="Menu">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
-        </div>
-
-        <!-- ===== LOGO ===== -->
-        <div class="logo-wrapper">
-            <img src="assets/logo profile.jpg" alt="JB Jar Store Logo" loading="lazy" />
-        </div>
-
-        <!-- ===== TITLE ===== -->
-        <h1 class="title-main">IT'S ME <br>JAR STORE</h1>
-        <p class="title-sub">✦ Jual Beli Akun Game Terpercaya ✦</p>
-
-        <div class="status-online">
-            <span class="dot"></span> Online — Siap Melayani 24 Jam
-        </div>
-
-        <!-- ===== DIVIDER ===== -->
-        <div class="divider-custom">
-            <span class="line"></span>
-            <span class="icon"><i class="fas fa-gem"></i></span>
-            <span class="line"></span>
-        </div>
-
-        <!-- ===== VIDEO ===== -->
-        <div class="video-wrapper">
-            <video id="mainVideo" autoplay loop muted playsinline>
-                <source src="assets/video.mp4" type="video/mp4" />
-                Browser tidak mendukung video.
-            </video>
-            <div class="video-overlay" id="videoOverlay">
-                <i class="fas fa-play-circle"></i>
-                <span>Klik untuk Play / Pause</span>
-            </div>
-        </div>
-
-        <!-- ===== STATS ===== -->
-        <div class="stats-grid">
-            <div class="stat-item">
-                <i class="fas fa-users"></i>
-                <span class="number">500+</span>
-                <span class="label">Pelanggan Puas</span>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-gamepad"></i>
-                <span class="number">3+</span>
-                <span class="label">Game Tersedia</span>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-star"></i>
-                <span class="number">4.9/5</span>
-                <span class="label">Rating Pelanggan</span>
-            </div>
-        </div>
-
-        <!-- ===== DESKRIPSI ===== -->
-        <div class="desc-text">
-            <p>
-                <span class="neon">JB Jar Store</span> adalah tempat <span class="highlight">jual beli akun game</span>
-                yang <span class="highlight">terpercaya, amanah</span>, dan sudah dipercaya oleh
-                <span class="highlight">500+ pelanggan</span> dari seluruh Indonesia.
-            </p>
-            <p>
-                Kami hadir untuk memenuhi kebutuhan akun game Anda dengan <span class="highlight">kualitas terbaik</span>,
-                <span class="highlight">harga bersahabat</span>, dan <span class="highlight">garansi full</span>
-                yang membuat Anda tidak perlu khawatir.
-            </p>
-            <span class="tagline">
-                <i class="fas fa-heart"></i> #ALLAMAN &amp; #AMANAH <i class="fas fa-heart"></i>
-            </span>
-        </div>
-
-        <!-- ===== CONTACT INFO ===== -->
-        <div class="contact-info">
-            <div class="contact-item">
-                <i class="fa-brands fa-whatsapp" style="color:#25D366;"></i>
-                <span>+62 831-7597-5689</span>
-                <button class="btn-copy-mini" onclick="copyNumber('083175975689')"><i class="fa-regular fa-copy"></i></button>
-            </div>
-            <div class="contact-item">
-                <i class="fa-brands fa-instagram" style="color:#E4405F;"></i>
-                <span>@Jarstore09</span>
-            </div>
-        </div>
-
-        <!-- ===== SECTION: TENTANG KAMI ===== -->
-        <div class="section-title">
-            <i class="fas fa-info-circle"></i> Tentang JB Jar Store <i class="fas fa-info-circle"></i>
-        </div>
-
-        <div class="about-box">
-            <p>
-                <i class="fas fa-shield-alt icon"></i>
-                <strong>Aman &amp; Terpercaya</strong> — Setiap transaksi di JB Jar Store
-                kami jamin keamanannya. Kami sudah dipercaya oleh <strong>500+ pelanggan</strong>
-                dan terus berkembang setiap harinya.
-            </p>
-            <p>
-                <i class="fas fa-bolt icon"></i>
-                <strong>Proses Cepat &amp; Mudah</strong> — Cukup chat admin, pilih akun,
-                bayar, dan akun langsung Anda terima. <strong>DIRECT</strong> tanpa antrian!
-            </p>
-            <p>
-                <i class="fas fa-hand-holding-heart icon"></i>
-                <strong>Amanah &amp; Ramah</strong> — Pelayanan terbaik dengan senyuman.
-                Setiap pelanggan adalah prioritas. <strong>Kepuasan Anda tujuan utama</strong>.
-            </p>
-            <p>
-                <i class="fas fa-tag icon"></i>
-                <strong>Harga Bersahabat</strong> — Budget mulai <strong>Rp 5.000</strong>
-                hingga <strong>Rp 100.000</strong>. Semua kalangan bisa memiliki akun impian!
-            </p>
-        </div>
-
-        <!-- ===== SECTION: KENAPA KAMI ===== -->
-        <div class="section-title">
-            <i class="fas fa-question-circle"></i> Kenapa Harus JB Jar Store? <i class="fas fa-question-circle"></i>
-        </div>
-
-        <div class="about-box">
-            <ul>
-                <li><strong>Garansi 100% Uang Kembali</strong> — No zonk! Kepuasan pelanggan adalah harga mati.</li>
-                <li><strong>Stok Selalu Tersedia</strong> — Update stok setiap pagi & malam. Akun segar terus!</li>
-                <li><strong>Admin Ramah &amp; Responsif</strong> — 24 jam nonstop, termasuk hari libur.</li>
-                <li><strong>Banyak Testimoni Positif</strong> — Ratusan pelanggan puas dan kembali lagi.</li>
-                <li><strong>Bisa MC (Main Candid) Dulu</strong> — Bukti kepercayaan & transparansi kami.</li>
-                <li><strong>Harga Kompetitif</strong> — Murah tapi berkualitas. <strong>Murah bukan murahan!</strong></li>
-                <li><strong>Proses Transaksi Cepat</strong> — Fast response! Dari chat sampai akun diterima.</li>
-            </ul>
-        </div>
-
-        <!-- ===== SECTION: GAME ===== -->
-        <div class="section-title">
-            <i class="fas fa-gamepad"></i> Game Yang Tersedia <i class="fas fa-gamepad"></i>
-        </div>
-
-        <div class="games-list">
-            <span class="game-tag">
-                <i class="fas fa-fire"></i> Free Fire
-                <span class="badge">ALLREF 10 Day</span>
-                <span class="badge-premium">PREMIUM</span>
-            </span>
-            <span class="game-tag">
-                <i class="fas fa-skull"></i> Mobile Legends
-                <span class="badge">ALLREF 15 Day</span>
-                <span class="badge-populer">POPULER</span>
-            </span>
-            <span class="game-tag">
-                <i class="fas fa-cube"></i> Roblox
-                <span class="badge">ALLREF 7 Day</span>
-                <span class="badge-terlaris">TERLARIS</span>
-            </span>
-        </div>
-
-        <div class="about-box">
-            <p>
-                <i class="fas fa-fire icon icon-orange"></i>
-                <strong>Free Fire (FF)</strong> — Skin langka, bundle eksklusif, karakter terbaru.
-                Rank Elite sampai Heroic tersedia. <strong>ALLREF 10 hari</strong> garansi penuh.
-                <br /><em style="color:#8a7ab3;">🔥 Mulai dari Rp 5.000!</em>
-            </p>
-            <p>
-                <i class="fas fa-skull icon" style="color:#8b5cf6;"></i>
-                <strong>Mobile Legends (ML)</strong> — Hero meta, skin kolektor, emblem lengkap.
-                Rank Mythic hingga Glory tersedia. <strong>ALLREF 15 hari</strong> garansi.
-                <br /><em style="color:#8a7ab3;">👾 Mulai dari Rp 5.000!</em>
-            </p>
-            <p>
-                <i class="fas fa-cube icon icon-yellow"></i>
-                <strong>Roblox</strong> — Item langka, robux banyak, gamepass keren.
-                <strong>ALLREF 7 hari</strong> garansi. Stok sesuai permintaan.
-                <br /><em style="color:#8a7ab3;">🎮 Mulai dari Rp 5.000!</em>
-            </p>
-            <p>
-                <i class="fas fa-plus-circle icon icon-pink"></i>
-                <strong>Game Lainnya?</strong> — Request game apapun! PUBG, CODM, Genshin Impact, dll.
-                Cukup chat admin, kami usahakan!
-                <br /><em style="color:#8a7ab3;">💬 Request = Usahakan!</em>
-            </p>
-        </div>
-
-        <!-- ===== SECTION: HARGA ===== -->
-        <div class="section-title">
-            <i class="fas fa-tags"></i> Daftar Harga <i class="fas fa-tags"></i>
-        </div>
-
-        <div class="price-list">
-            <div class="price-item">
-                <span class="game-name">🔥 Free Fire</span>
-                <span class="price">Rp 5K - 100K</span>
-            </div>
-            <div class="price-item">
-                <span class="game-name">👾 Mobile Legends</span>
-                <span class="price">Rp 5K - 100K</span>
-            </div>
-            <div class="price-item">
-                <span class="game-name">🎮 Roblox</span>
-                <span class="price">Rp 5K - 100K</span>
-            </div>
-            <div class="price-item">
-                <span class="game-name">📦 Request Game</span>
-                <span class="price">Chat Admin</span>
-            </div>
-        </div>
-
-        <!-- ===== SECTION: SISTEM ===== -->
-        <div class="section-title">
-            <i class="fas fa-cogs"></i> Sistem &amp; Layanan <i class="fas fa-cogs"></i>
-        </div>
-
-        <div class="about-box">
-            <p>
-                <i class="fas fa-box icon"></i>
-                <strong>Sistem Stock</strong>
-                <br />
-                • <strong>ALLREF / PRIBADI / ADMIN</strong> → GARANSI FULL
-                <br />
-                • <strong>SEGER / BARU / FRESH</strong> → NO REFF
-                <br />
-                <em style="color:#8a7ab3;">📦 Update stok setiap hari!</em>
-            </p>
-            <p>
-                <i class="fas fa-money-bill-wave icon"></i>
-                <strong>Budget 5K - 100K</strong> — Cocok untuk semua kalangan!
-                <br /><em style="color:#8a7ab3;">💰 Ada paket hemat untuk pembelian banyak.</em>
-            </p>
-            <p>
-                <i class="fas fa-clock icon"></i>
-                <strong>24 Jam Aktif</strong> — Admin selalu online! Tidak ada hari libur.
-                <br /><em style="color:#8a7ab3;">⏰ Nonstop! Kapan saja Anda butuh.</em>
-            </p>
-            <p>
-                <i class="fas fa-shield-alt icon"></i>
-                <strong>Sistem Keamanan</strong> — Data Anda aman, privasi terjaga.
-                <br /><em style="color:#8a7ab3;">🔒 Privasi pelanggan nomor satu!</em>
-            </p>
-            <p>
-                <i class="fas fa-handshake icon"></i>
-                <strong>Metode Pembayaran</strong> — Bank, e-wallet (DANA, OVO, GOPAY), pulsa.
-                <br /><em style="color:#8a7ab3;">💳 Banyak pilihan, semua aman!</em>
-            </p>
-        </div>
-
-        <!-- ===== SECTION: PAYMENT ===== -->
-        <div class="section-title">
-            <i class="fas fa-credit-card"></i> Metode Pembayaran <i class="fas fa-credit-card"></i>
-        </div>
-
-        <!-- ===== DANA ===== -->
-        <div class="about-box payment-box">
-            <div class="payment-icon">
-                <i class="fas fa-wallet" style="color:#2b7a3a; font-size:28px;"></i>
-                <span style="font-weight:800; color:#2b7a3a; font-size:16px;">DANA</span>
-                <span class="badge-terlaris" style="font-size:7px;">FAVORIT</span>
-            </div>
-            <div class="payment-detail">
-                <p><strong>Nomor DANA:</strong> <span class="copy-number" onclick="copyNumber('088212210329')">0882-1221-0329 <i class="fa-regular fa-copy" style="font-size:12px; color:#a855f7; cursor:pointer;"></i></span></p>
-                <p><strong>A/N:</strong> L*L*</p>
-                <p style="font-size:12px; color:#8a7ab3;">*Klik nomor untuk copy*</p>
-            </div>
-            <button class="btn-payment" onclick="copyNumber('083175975689')">
-                <i class="fa-regular fa-copy"></i> Copy Nomor DANA
+            <button class="menu-btn" onclick="showMenu()">
+                <i class="fa-solid fa-bars"></i>
             </button>
         </div>
 
-        <!-- ===== QRIS ===== -->
-        <div class="about-box payment-box">
-            <div class="payment-icon">
-                <i class="fas fa-qrcode" style="color:#8b5cf6; font-size:28px;"></i>
-                <span style="font-weight:800; color:#8b5cf6; font-size:16px;">QRIS</span>
-                <span class="badge-premium" style="font-size:7px;">PRAKTIS</span>
+        <!-- PROFILE -->
+        <div class="profile-section">
+            <div class="profile-pic">
+                <img src="assets/logo profile.jpg" alt="Profile">
+                <div class="verified"><i class="fa-solid fa-check"></i></div>
             </div>
-            <div class="payment-detail">
-                <p style="color:#c8bde6;">Scan QRIS untuk pembayaran via semua e-wallet &amp; mobile banking.</p>
-                <p style="font-size:12px; color:#8a7ab3;">*QRIS tersedia, chat admin untuk mendapatkan kode QRIS*</p>
-            </div>
-            <button class="btn-payment qris-btn" onclick="requestQris()">
-                <i class="fas fa-qrcode"></i> Minta QRIS ke Admin
+            <h1 class="profile-name">JB JAR STORE</h1>
+            <a href="https://wa.me/6283175975689" class="profile-link" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> +62 831-7597-5689
+            </a>
+            <a href="https://instagram.com/Jarstore09" class="profile-link" target="_blank">
+                <i class="fa-brands fa-instagram"></i> @Jarstore09
+            </a>
+        </div>
+
+        <!-- PAYMENT HEADER -->
+        <div class="payment-header">
+            <span class="left">CHOOSE PAYMENT METHODS</span>
+            <span class="right">ALL PAYMENT</span>
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="btn-list">
+            <button class="btn btn-dana" onclick="copyNumber('088212210329')">
+                <i class="fa-solid fa-wallet"></i> DANA PAYMENT
+            </button>
+            <button class="btn btn-gopay" onclick="copyNumber('083175975689')">
+                <i class="fa-solid fa-coins"></i> GOPAY PAYMENT
+            </button>
+            <button class="btn btn-qris" onclick="requestQris()">
+                <i class="fa-solid fa-qrcode"></i> QRIS PAYMENT
             </button>
         </div>
 
-        <!-- ===== SOSMED ===== -->
-        <div class="section-title">
-            <i class="fas fa-share-alt"></i> Hubungi Kami <i class="fas fa-share-alt"></i>
-        </div>
-
-        <div class="sosmed-grid">
-            <a href="https://wa.me/6283175975689" class="sosmed-btn wa" target="_blank" rel="noopener">
-                <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                <span class="badge-sosmed">24 Jam</span>
-            </a>
-            <a href="https://instagram.com/Jarstore09" class="sosmed-btn ig" target="_blank" rel="noopener">
-                <i class="fa-brands fa-instagram"></i> Instagram
-                <span class="badge-sosmed">@Jarstore09</span>
-            </a>
-        </div>
-
-        <!-- ===== SALURAN INFO DAGET ===== -->
-        <div class="section-title">
-            <i class="fas fa-broadcast"></i> Info Daget &amp; Stok <i class="fas fa-broadcast"></i>
-        </div>
-
-        <div class="about-box channel-box">
-            <div class="channel-content">
-                <div class="channel-icon">
-                    <i class="fas fa-bullhorn" style="color:#a855f7; font-size:32px;"></i>
-                </div>
-                <div class="channel-detail">
-                    <p style="font-weight:700; color:#c084fc; font-size:16px;">Saluran Info Daget</p>
-                    <p style="color:#c8bde6; font-size:13px; line-height:1.8;">
-                        Dapatkan <span class="highlight">update stok terbaru</span>,
-                        <span class="highlight">info promo</span>, dan
-                        <span class="highlight">testimoni pelanggan</span>
-                        langsung dari saluran resmi JB Jar Store!
-                    </p>
-                    <p style="font-size:12px; color:#8a7ab3;">
-                        <i class="fas fa-clock"></i> Update stok setiap hari •
-                        <i class="fas fa-users"></i> Ratusan member aktif
-                    </p>
-                </div>
-            </div>
-            <a href="https://whatsapp.com/channel/0029Vb8afdKDDmFcSB6ldm1O" class="btn-channel" target="_blank" rel="noopener">
-                <i class="fa-brands fa-whatsapp"></i> Gabung Saluran Info Daget
-                <span class="badge-channel">FREE</span>
-            </a>
-        </div>
-
-        <!-- ===== SECTION: TESTIMONI ===== -->
-        <div class="section-title">
-            <i class="fas fa-quote-left"></i> Kata Mereka <i class="fas fa-quote-right"></i>
-        </div>
-
-        <div class="testimoni-grid">
-            <div class="testimoni-card">
-                <span class="user">Andi</span>
-                <span class="game">🔥 FF Player</span>
-                <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="text">"Mantap banget akunnya! Langsung masuk, garansi beneran. Udah langganan di sini!"</div>
-            </div>
-            <div class="testimoni-card">
-                <span class="user">Siti</span>
-                <span class="game">👾 ML Player</span>
-                <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="text">"Pelayanannya ramah banget, admin sabar ngejelasin. Akun sesuai pesenan!"</div>
-            </div>
-            <div class="testimoni-card">
-                <span class="user">Rizky</span>
-                <span class="game">🎮 Roblox Collector</span>
-                <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="text">"Langka banget dapet item Roblox di sini. Proses cepet, ga pake lama!"</div>
-            </div>
-            <div class="testimoni-card">
-                <span class="user">Dewi</span>
-                <span class="game">🌟 Newbie</span>
-                <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="text">"Aku baru pertama kali beli, takut ketipu. Tapi di sini malah dibimbing adminnya!"</div>
-            </div>
-            <div class="testimoni-card">
-                <span class="user">Fajar</span>
-                <span class="game">💎 Collector</span>
-                <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="text">"Udah beli 5x di sini, ga pernah mengecewakan. Stok selalu update!"</div>
-            </div>
-            <div class="testimoni-card">
-                <span class="user">Rina</span>
-                <span class="game">🎯 Gamer</span>
-                <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="text">"Pelayanan cepat, harga murah, akun berkualitas. Nggak nyesel pilih ini!"</div>
+        <!-- SOSMED -->
+        <div class="sosmed-section">
+            <div class="sosmed-title">CONNECT WITH ME</div>
+            <div class="sosmed-grid">
+                <a href="https://wa.me/6283175975689" class="sosmed-icon wa" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://instagram.com/Jarstore09" class="sosmed-icon ig" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             </div>
         </div>
 
-        <!-- ===== SECTION: TIPS KEAMANAN ===== -->
-        <div class="section-title">
-            <i class="fas fa-exclamation-triangle"></i> Tips Keamanan <i class="fas fa-exclamation-triangle"></i>
-        </div>
-
-        <div class="about-box">
-            <p>
-                <i class="fas fa-shield-alt icon icon-orange"></i>
-                <strong>Waspada Penipuan!</strong> — Hanya hubungi nomor admin resmi kami.
-                Selain nomor yang tertera, harap diwaspadai karena itu adalah <span class="highlight">nomor CLONE / palsu</span>.
-                Kami tidak bertanggung jawab atas transaksi di luar kontak resmi.
-            </p>
-            <p>
-                <i class="fas fa-eye icon icon-orange"></i>
-                <strong>Cek Testimoni</strong> — Sebelum membeli, lihat testimoni pelanggan lain.
-                Ini bukti nyata kualitas kami!
-            </p>
-            <p>
-                <i class="fas fa-handshake icon icon-orange"></i>
-                <strong>Jangan Ragu Bertanya</strong> — <span class="highlight">Jangan ragu bertanya</span>
-                ke admin. Kami siap menjelaskan dengan detail dan jelas. <strong>No toxic!</strong>
-            </p>
-            <p>
-                <i class="fas fa-check-circle icon icon-orange"></i>
-                <strong>Gunakan MC (Main Candid)</strong> — Manfaatkan fasilitas MC yang kami sediakan
-                untuk memastikan akun sesuai dengan keinginan Anda.
-            </p>
-        </div>
-
-        <!-- ===== FOOTER ===== -->
+        <!-- FOOTER -->
         <div class="footer">
-            <span>Dibuat dengan <span class="heart">♥</span> untuk JB Jar Store</span>
-            <span class="version">v3.0 • 2026</span>
-            <span class="tags">
-                <i class="fas fa-gem"></i> #JBJARSTORE <i class="fas fa-gem"></i>
-                #INFODAGET <i class="fas fa-gem"></i> #ALLAMAN <i class="fas fa-gem"></i>
-                #AMANAH <i class="fas fa-gem"></i>
-            </span>
-            <span class="copyright">© 2026 JB Jar Store — All Rights Reserved</span>
+            <div class="dev-label">WEB DEVELOPED BY</div>
+            <div class="dev-name">JB JAR STORE</div>
         </div>
 
     </div>
