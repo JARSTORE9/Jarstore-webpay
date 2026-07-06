@@ -103,25 +103,41 @@ function requestQris() {
 
 // ===== MODAL =====
 function showDana() {
-    document.getElementById('danaModal').classList.add('active');
-    document.body.style.overflow = 'hidden';
+    const modal = document.getElementById('danaModal');
+    if (modal) {
+        modal.style.display = 'flex';
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
 }
 
 function showGopay() {
-    document.getElementById('gopayModal').classList.add('active');
-    document.body.style.overflow = 'hidden';
+    const modal = document.getElementById('gopayModal');
+    if (modal) {
+        modal.style.display = 'flex';
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
 }
 
 function closeModal(id) {
-    document.getElementById(id).classList.remove('active');
-    document.body.style.overflow = '';
+    const modal = document.getElementById(id);
+    if (modal) {
+        modal.style.display = 'none';
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+    }
 }
 
-// Tutup modal kalo klik di luar
+// Tutup modal kalo klik di overlay
 document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('modal')) {
-        e.target.classList.remove('active');
-        document.body.style.overflow = '';
+    if (e.target.classList.contains('modal-overlay')) {
+        const modal = e.target.closest('.modal');
+        if (modal) {
+            modal.style.display = 'none';
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+        }
     }
 });
 
@@ -158,23 +174,24 @@ function setupVideo() {
 function showMenu() {
     alert(
         '📋 MENU JB JAR STORE\n' +
-        '═══════════════════\n\n' +
+        '═══════════════════════\n\n' +
         '🏠 Home\n' +
         '💳 DANA Payment\n' +
         '💰 GOPAY Payment\n' +
         '📱 QRIS Payment\n' +
         '📢 Saluran Info Daget\n' +
-        '📞 Contact\n\n' +
-        '═══════════════════\n' +
-        'Terima kasih! 🙏'
+        '📞 Contact\n' +
+        '⭐ Testimoni\n\n' +
+        '═══════════════════════\n' +
+        'Terima kasih sudah percaya! 🙏'
     );
 }
 
 // ===== START =====
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🔥 JB Jar Store loaded!');
+    console.log('🔥 JB Jar Store v4.0 loaded!');
     console.log('💜 #ALLAMAN #AMANAH');
-    console.log('✨ Animasi smooth aktif!');
+    console.log('✨ Animasi smooth & neon aktif!');
 
     setupVideo();
     startLoading();
