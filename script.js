@@ -39,6 +39,14 @@ function hideLoading() {
     const content = document.getElementById('mainContent');
     screen.classList.add('hide');
     content.classList.remove('hidden');
+
+    // ===== PLAY VIDEO SETELAH LOADING =====
+    const video = document.getElementById('mainVideo');
+    if (video) {
+        video.play().catch(function(e) {
+            console.log('Video autoplay error:', e);
+        });
+    }
 }
 
 function skipLoading() {
@@ -114,10 +122,51 @@ function showMenu() {
     );
 }
 
+// ===== VIDEO - AUTOPLAY NO PAUSE =====
+function setupVideo() {
+    const video = document.getElementById('mainVideo');
+    if (!video) return;
+
+    // Force autoplay
+    video.muted = true;
+    video.autoplay = true;
+    video.loop = true;
+    video.playsInline = true;
+
+    // Coba play
+    video.play().catch(function(e) {
+        console.log('Autoplay dicegah browser, menunggu interaksi user');
+        // Coba lagi setelah user klik
+        document.addEventListener('click', function playOnce() {
+            video.play().catch(function() {});
+            document.removeEventListener('click', playOnce);
+        });
+    });
+
+    // Video error handler
+    video.addEventListener('error', function(e) {
+        console.warn('⚠️ Video error:', e);
+    });
+
+    // Pastikan video tetap play (jika pause karena sesuatu)
+    video.addEventListener('pause', function() {
+        // Jika video kepause karena sesuatu, play lagi
+        setTimeout(function() {
+            if (video.paused) {
+                video.play().catch(function() {});
+            }
+        }, 100);
+    });
+
+    console.log('🎬 Video autoplay siap!');
+}
+
 // ===== START =====
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🔥 JB Jar Store loaded!');
     console.log('💜 #ALLAMAN #AMANAH');
     console.log('✨ Animasi goyang halus aktif!');
+
+    setupVideo();
     startLoading();
 });
