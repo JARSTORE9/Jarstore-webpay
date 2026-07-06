@@ -1,6 +1,5 @@
 // ============================================================
 // JB JAR STORE - SCRIPT.JS
-// Simple & Clean + Animasi
 // ============================================================
 
 // ===== LOADING =====
@@ -10,12 +9,7 @@ let loadingInterval;
 function startLoading() {
     const bar = document.getElementById('loaderBar');
     const text = document.getElementById('loaderText');
-    const messages = [
-        'Loading...',
-        'Memuat Data...',
-        'Almost Ready...',
-        'Siap!'
-    ];
+    const messages = ['Loading...', 'Memuat Data...', 'Almost Ready...', 'Siap!'];
 
     loadingInterval = setInterval(() => {
         loadingProgress += Math.random() * 8 + 2;
@@ -40,11 +34,12 @@ function hideLoading() {
     screen.classList.add('hide');
     content.classList.remove('hidden');
 
-    // ===== PLAY VIDEO SETELAH LOADING =====
     const video = document.getElementById('mainVideo');
     if (video) {
+        // PLAY VIDEO DENGAN SUARA!
+        video.muted = false;
         video.play().catch(function(e) {
-            console.log('Video autoplay error:', e);
+            console.log('Autoplay with sound error:', e);
         });
     }
 }
@@ -116,41 +111,36 @@ function showMenu() {
         '💳 DANA Payment\n' +
         '💰 GOPAY Payment\n' +
         '📱 QRIS Payment\n' +
+        '📢 Saluran Info Daget\n' +
         '📞 Contact\n\n' +
         '═══════════════════\n' +
         'Terima kasih! 🙏'
     );
 }
 
-// ===== VIDEO - AUTOPLAY NO PAUSE =====
+// ===== VIDEO AUTO SUARA =====
 function setupVideo() {
     const video = document.getElementById('mainVideo');
     if (!video) return;
 
-    // Force autoplay
-    video.muted = true;
+    // ===== UNMUTE =====
+    video.muted = false;
     video.autoplay = true;
     video.loop = true;
     video.playsInline = true;
 
     // Coba play
     video.play().catch(function(e) {
-        console.log('Autoplay dicegah browser, menunggu interaksi user');
-        // Coba lagi setelah user klik
+        console.log('Autoplay error:', e);
+        // Kalo error karena browser, coba lagi pake interaksi
         document.addEventListener('click', function playOnce() {
             video.play().catch(function() {});
             document.removeEventListener('click', playOnce);
         });
     });
 
-    // Video error handler
-    video.addEventListener('error', function(e) {
-        console.warn('⚠️ Video error:', e);
-    });
-
-    // Pastikan video tetap play (jika pause karena sesuatu)
+    // ===== PAKSA PLAY TERUS =====
     video.addEventListener('pause', function() {
-        // Jika video kepause karena sesuatu, play lagi
         setTimeout(function() {
             if (video.paused) {
                 video.play().catch(function() {});
@@ -158,7 +148,11 @@ function setupVideo() {
         }, 100);
     });
 
-    console.log('🎬 Video autoplay siap!');
+    video.addEventListener('error', function(e) {
+        console.warn('⚠️ Video error:', e);
+    });
+
+    console.log('🎬 Video auto suara aktif! 🔊');
 }
 
 // ===== START =====
