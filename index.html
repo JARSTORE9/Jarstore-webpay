@@ -16,6 +16,7 @@
             <div class="loader-logo">
                 <img src="assets/logo profile.jpg" alt="JB Jar Store">
                 <div class="loader-ring"></div>
+                <div class="loader-ring-2"></div>
             </div>
             <div class="loader-bar-wrapper">
                 <div class="loader-bar" id="loaderBar"></div>
@@ -45,10 +46,35 @@
 
         <!-- ===== BANNER ===== -->
         <div class="banner-wrapper">
-            <img src="assets/Banner.jpg" alt="JB Jar Store Banner" class="banner-img">
+            <img src="assets/Banner.jpg" alt="JB Jar Store Banner" class="banner-img" onerror="this.style.display='none'">
             <div class="banner-overlay">
-                <h2>JB JAR STORE</h2>
+                <div class="banner-glow"></div>
+                <h2>✦ JB JAR STORE ✦</h2>
                 <p>Jual Beli Akun Game Terpercaya & Amanah</p>
+                <div class="banner-badges">
+                    <span class="badge-neon">#AMANAH</span>
+                    <span class="badge-neon">#ALLAMAN</span>
+                    <span class="badge-neon">#GARANSI</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== STATS ===== -->
+        <div class="stats-grid">
+            <div class="stat-item">
+                <i class="fas fa-users"></i>
+                <span class="number">500+</span>
+                <span class="label">Pelanggan Puas</span>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-star"></i>
+                <span class="number">4.9/5</span>
+                <span class="label">Rating</span>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-clock"></i>
+                <span class="number">24/7</span>
+                <span class="label">Online</span>
             </div>
         </div>
 
@@ -58,8 +84,13 @@
                 <img src="assets/logo profile.jpg" alt="Profile">
                 <div class="verified"><i class="fa-solid fa-check"></i></div>
                 <div class="profile-ring"></div>
+                <div class="profile-ring-2"></div>
             </div>
             <h1 class="profile-name">JB JAR STORE</h1>
+            <div class="profile-badges">
+                <span class="badge-premium">⭐ PREMIUM</span>
+                <span class="badge-verified">✅ TERVERIFIKASI</span>
+            </div>
             <a href="https://wa.me/6283175975689" class="profile-link" target="_blank">
                 <i class="fa-brands fa-whatsapp"></i> +62 831-7597-5689
             </a>
@@ -77,83 +108,29 @@
             <div class="video-badge">
                 <i class="fas fa-volume-up"></i> 🔊
             </div>
+            <div class="video-glow"></div>
         </div>
 
         <!-- ===== PAYMENT HEADER ===== -->
         <div class="payment-header">
-            <span class="left">CHOOSE PAYMENT METHODS</span>
-            <span class="right">ALL PAYMENT</span>
+            <span class="left">💳 CHOOSE PAYMENT METHODS</span>
+            <span class="right">ALL PAYMENT ✅</span>
         </div>
 
         <!-- ===== BUTTONS ===== -->
         <div class="btn-list">
             <button class="btn btn-dana" onclick="showDana()">
                 <i class="fa-solid fa-wallet"></i> DANA PAYMENT
+                <span class="btn-badge">FAVORIT</span>
             </button>
             <button class="btn btn-gopay" onclick="showGopay()">
                 <i class="fa-solid fa-coins"></i> GOPAY PAYMENT
+                <span class="btn-badge">POPULER</span>
             </button>
             <button class="btn btn-qris" onclick="requestQris()">
                 <i class="fa-solid fa-qrcode"></i> QRIS PAYMENT
+                <span class="btn-badge">PRAKTIS</span>
             </button>
-        </div>
-
-        <!-- ===== MODAL DANA ===== -->
-        <div id="danaModal" class="modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3><i class="fa-solid fa-wallet" style="color:#2b7a3a;"></i> DANA PAYMENT</h3>
-                    <button class="modal-close" onclick="closeModal('danaModal')">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="payment-info">
-                        <div class="info-item">
-                            <span class="label">💳 Nomor DANA</span>
-                            <span class="value copy-number" onclick="copyNumber('088212210329')">0882-1221-0329 <i class="fa-regular fa-copy"></i></span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">👤 A/N</span>
-                            <span class="value">L*L*</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">📌 Status</span>
-                            <span class="value status-active">✅ AKTIF</span>
-                        </div>
-                    </div>
-                    <button class="btn-modal-copy" onclick="copyNumber('088212210329')">
-                        <i class="fa-regular fa-copy"></i> Copy Nomor DANA
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===== MODAL GOPAY ===== -->
-        <div id="gopayModal" class="modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3><i class="fa-solid fa-coins" style="color:#1a8a7a;"></i> GOPAY PAYMENT</h3>
-                    <button class="modal-close" onclick="closeModal('gopayModal')">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="payment-info">
-                        <div class="info-item">
-                            <span class="label">💳 Nomor GOPAY</span>
-                            <span class="value copy-number" onclick="copyNumber('083175975689')">0831-7597-5689 <i class="fa-regular fa-copy"></i></span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">👤 A/N</span>
-                            <span class="value">J*R ST*RE</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">📌 Status</span>
-                            <span class="value status-active">✅ AKTIF</span>
-                        </div>
-                    </div>
-                    <button class="btn-modal-copy" onclick="copyNumber('083175975689')">
-                        <i class="fa-regular fa-copy"></i> Copy Nomor GOPAY
-                    </button>
-                </div>
-            </div>
         </div>
 
         <!-- ===== CHANNEL BUTTON ===== -->
@@ -164,19 +141,99 @@
 
         <!-- ===== SOSMED ===== -->
         <div class="sosmed-section">
-            <div class="sosmed-title">CONNECT WITH ME</div>
+            <div class="sosmed-title">📱 CONNECT WITH ME</div>
             <div class="sosmed-grid">
-                <a href="https://wa.me/6283175975689" class="sosmed-icon wa" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="https://instagram.com/Jarstore09" class="sosmed-icon ig" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/6283175975689" class="sosmed-icon wa" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WA</span>
+                </a>
+                <a href="https://instagram.com/Jarstore09" class="sosmed-icon ig" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>IG</span>
+                </a>
+                <a href="https://whatsapp.com/channel/0029Vb8afdKDDmFcSB6ldm1O" class="sosmed-icon channel-btn" target="_blank">
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <span>Channel</span>
+                </a>
             </div>
         </div>
 
         <!-- ===== FOOTER ===== -->
         <div class="footer">
-            <div class="dev-label">WEB DEVELOPED BY</div>
+            <div class="footer-glow"></div>
+            <div class="dev-label">⚡ WEB DEVELOPED BY</div>
             <div class="dev-name">JB JAR STORE</div>
+            <div class="footer-tags">
+                <span>#JBJARSTORE</span>
+                <span>#AMANAH</span>
+                <span>#ALLAMAN</span>
+                <span>#INFODAGET</span>
+            </div>
+            <div class="footer-copy">© 2026 JB Jar Store — All Rights Reserved</div>
         </div>
 
+    </div>
+
+    <!-- ===== MODAL DANA ===== -->
+    <div id="danaModal" class="modal" style="display:none;">
+        <div class="modal-overlay" onclick="closeModal('danaModal')"></div>
+        <div class="modal-content">
+            <div class="modal-glow"></div>
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-wallet" style="color:#2b7a3a;"></i> DANA PAYMENT</h3>
+                <button class="modal-close" onclick="closeModal('danaModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="payment-info">
+                    <div class="info-item">
+                        <span class="label">💳 Nomor DANA</span>
+                        <span class="value copy-number" onclick="copyNumber('088212210329')">0882-1221-0329 <i class="fa-regular fa-copy"></i></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">👤 A/N</span>
+                        <span class="value">L*L*</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">📌 Status</span>
+                        <span class="value status-active">✅ AKTIF</span>
+                    </div>
+                </div>
+                <button class="btn-modal-copy" onclick="copyNumber('088212210329')">
+                    <i class="fa-regular fa-copy"></i> Copy Nomor DANA
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MODAL GOPAY ===== -->
+    <div id="gopayModal" class="modal" style="display:none;">
+        <div class="modal-overlay" onclick="closeModal('gopayModal')"></div>
+        <div class="modal-content">
+            <div class="modal-glow"></div>
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-coins" style="color:#1a8a7a;"></i> GOPAY PAYMENT</h3>
+                <button class="modal-close" onclick="closeModal('gopayModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="payment-info">
+                    <div class="info-item">
+                        <span class="label">💳 Nomor GOPAY</span>
+                        <span class="value copy-number" onclick="copyNumber('083175975689')">0831-7597-5689 <i class="fa-regular fa-copy"></i></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">👤 A/N</span>
+                        <span class="value">J*R ST*RE</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">📌 Status</span>
+                        <span class="value status-active">✅ AKTIF</span>
+                    </div>
+                </div>
+                <button class="btn-modal-copy" onclick="copyNumber('083175975689')">
+                    <i class="fa-regular fa-copy"></i> Copy Nomor GOPAY
+                </button>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
