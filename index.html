@@ -15,6 +15,7 @@
         <div class="loader-container">
             <div class="loader-logo">
                 <img src="assets/logo profile.jpg" alt="JB Jar Store">
+                <div class="loader-ring"></div>
             </div>
             <div class="loader-bar-wrapper">
                 <div class="loader-bar" id="loaderBar"></div>
@@ -27,23 +28,27 @@
     <!-- ===== MAIN CONTENT ===== -->
     <div id="mainContent" class="main-content hidden">
 
-        <!-- TOP NAV -->
+        <!-- ===== TOP NAV ===== -->
         <div class="top-nav">
             <div class="nav-left">
-                <span class="nav-label">DIGITALS PAYMENT</span>
+                <span class="nav-label">✦ DIGITALS PAYMENT</span>
                 <span class="nav-divider">/</span>
                 <span class="nav-brand">JB JAR STORE</span>
             </div>
-            <button class="menu-btn" onclick="showMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+            <div class="nav-right">
+                <span class="online-badge"><span class="dot"></span> Online</span>
+                <button class="menu-btn" onclick="showMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
         </div>
 
-        <!-- PROFILE -->
+        <!-- ===== PROFILE ===== -->
         <div class="profile-section">
             <div class="profile-pic">
                 <img src="assets/logo profile.jpg" alt="Profile">
                 <div class="verified"><i class="fa-solid fa-check"></i></div>
+                <div class="profile-ring"></div>
             </div>
             <h1 class="profile-name">JB JAR STORE</h1>
             <a href="https://wa.me/6283175975689" class="profile-link" target="_blank">
@@ -56,19 +61,22 @@
 
         <!-- ===== VIDEO ===== -->
         <div class="video-wrapper">
-            <video id="mainVideo" autoplay loop muted playsinline>
+            <video id="mainVideo" autoplay loop playsinline>
                 <source src="assets/video.mp4" type="video/mp4" />
                 Browser tidak mendukung video.
             </video>
+            <div class="video-badge">
+                <i class="fas fa-volume-up"></i> 🔊
+            </div>
         </div>
 
-        <!-- PAYMENT HEADER -->
+        <!-- ===== PAYMENT HEADER ===== -->
         <div class="payment-header">
             <span class="left">CHOOSE PAYMENT METHODS</span>
             <span class="right">ALL PAYMENT</span>
         </div>
 
-        <!-- BUTTONS -->
+        <!-- ===== BUTTONS ===== -->
         <div class="btn-list">
             <button class="btn btn-dana" onclick="copyNumber('088212210329')">
                 <i class="fa-solid fa-wallet"></i> DANA PAYMENT
@@ -81,7 +89,13 @@
             </button>
         </div>
 
-        <!-- SOSMED -->
+        <!-- ===== CHANNEL BUTTON ===== -->
+        <a href="https://whatsapp.com/channel/0029Vb8afdKDDmFcSB6ldm1O" class="btn-channel" target="_blank">
+            <i class="fa-solid fa-bullhorn"></i> GABUNG SALURAN INFO DAGET
+            <span class="badge-channel">FREE</span>
+        </a>
+
+        <!-- ===== SOSMED ===== -->
         <div class="sosmed-section">
             <div class="sosmed-title">CONNECT WITH ME</div>
             <div class="sosmed-grid">
@@ -90,7 +104,7 @@
             </div>
         </div>
 
-        <!-- FOOTER -->
+        <!-- ===== FOOTER ===== -->
         <div class="footer">
             <div class="dev-label">WEB DEVELOPED BY</div>
             <div class="dev-name">JB JAR STORE</div>
